@@ -33,7 +33,49 @@ themeToggleBtn.addEventListener('click', () => {
         localStorage.setItem('visited', 'true');
     }
     document.getElementById('count').textContent = visits;
+
 // ==========================================
+// 2. COMPLEX LOGIC: PROJECT FILTERING & SEARCH
+// ==========================================
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.projects-grid .project-card');
+const searchInput = document.getElementById('project-search');
+
+function filterAndSearchProjects() {
+    const activeCategory = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    const searchTerm = searchInput.value.toLowerCase().trim();
+
+    projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const desc = card.querySelector('p').textContent.toLowerCase();
+
+        const matchesCategory = (activeCategory === 'all' || category === activeCategory);
+        const matchesSearch = (title.includes(searchTerm) || desc.includes(searchTerm));
+
+        if (matchesCategory && matchesSearch) {
+            card.style.display = 'block';
+            setTimeout(() => card.style.opacity = '1', 50);
+        } else {
+            card.style.opacity = '0';
+            setTimeout(() => card.style.display = 'none', 300);
+        }
+    });
+}
+
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterAndSearchProjects();
+    });
+});
+
+if (searchInput) {
+    searchInput.addEventListener('input', filterAndSearchProjects);
+}
+
+    // ==========================================
 // 2. FORM VALIDATION & POPUP TOAST FEEDBACK
 // ==========================================
 const contactForm = document.querySelector('.contact-form');

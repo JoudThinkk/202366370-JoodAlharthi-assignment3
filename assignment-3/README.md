@@ -1,49 +1,44 @@
+# Personal Portfolio Website - Assignment 3
 
-# Personal Portfolio Website - Assignment 2
-
-##  Project Overview
-This repository contains the second iteration of my personal portfolio website, developed as part of **Assignment 2**. Building upon the static layout of Assignment 1, this version introduces advanced **interactivity, client-side data handling, persistent storage, form validation, and modern user experience (UX) enhancements** built entirely with vanilla JavaScript and modern CSS.
-
----
-
-##  Key Features & Technical Implementation
-
-### 1. Dynamic Content & Theme Switcher
-- Implemented a dynamic **Dark/Light Mode** toggle button.
-- Dynamically updates UI elements, background colors, card styles, and text colors based on the selected mode.
-- Updates the button text and icon dynamically (`🌙 Dark Mode` / `☀️ Light Mode`).
-
-### 2. Client Side Data Handling (`localStorage`)
-- Integrated browser **`localStorage`** to remember the user's preferred theme.
-- When a user revisits or reloads the page, their last chosen theme (Dark or Light) is automatically retrieved and applied, preventing preference reset.
-
-### 3. Interactive Contact Form & Form Validation
-- Developed an interactive contact form with real time field validation (Name, Email, and Message).
-- Includes error checking logic to ensure no required fields are left blank.
-- Validates email input formats to ensure they contain proper structure (including `@` and `.`).
-
-### 4. Modern User Feedback (Custom Toast Notifications)
-- Replaced standard static text alerts with a dynamic **floating Toast Notification system**.
-- Delivers clear, animated feedback to users (*what happened and what to do next*):
-  - **Success Toasts:** Green notifications confirming successful form submissions with personalized greetings.
-  - **Error Toasts:** Red notifications guiding users to fix empty fields or incorrect email formats.
-  - Automatically fades out after 4 seconds for a clean UI experience.
-
-### 5. Animations & Smooth Transitions
-- Added smooth fade in entrance animations across sections upon page load.
-- Implemented interactive hover effects (`transform: translateY`) on project cards for an engaging user experience.
+## 🌟 Project Overview
+This repository contains the third and advanced iteration of my personal portfolio website, developed as part of **Assignment 3**. Building upon the interactive foundation of Assignment 2, this version introduces robust **API Integration** (fetching live repositories directly from GitHub), **Complex Logic & State Management** (real-time search and category filtering), and advanced client-side error handling to meet all professional evaluation criteria.
 
 ---
 
-## Technologies Used
-- **HTML5:** Semantic layout structuring.
-- **CSS3:** Flexbox, CSS Grid, and custom dark mode styling.
-- **JavaScript (ES6+):** DOM manipulation, `localStorage`, form validation, and dynamic toast notifications.
+## 🚀 Key Features & Technical Implementation
+
+### 1. GitHub API Integration (`API Integration`)
+* Implemented an asynchronous function (`fetchGitHubRepos`) utilizing JavaScript's `fetch` and `async/await` to query public repositories dynamically from my GitHub account (`@JoudThink`).
+* **Loading & Error States:** Designed resilient client-side architecture featuring a loading indicator during data retrieval and a user-friendly error state (`.error-state`) to handle network failures gracefully according to rubric specifications.
+
+### 2. Complex Logic & Real-time Filtering (`Complex Logic`)
+* **Dual-Layer Filtering:** Combined category-based buttons (All, Web, Network) with a live text search input (`#project-search`) to filter projects dynamically.
+* **Event-Driven UI Updates:** Listens to real-time `'input'` events on the search box and `'click'` events on category buttons, updating project cards instantly without page reloads.
+* **Smooth Transitions:** Applied CSS opacity and transform transitions for clean fade-in and fade-out effects during searches.
+
+### 3. Dynamic Content & Theme Switcher
+* Implemented a dynamic **Dark/Light Mode** toggle button with smooth CSS transitions (`transition: background-color 0.3s ease, color 0.3s ease;`).
+* Dynamically updates UI elements, background colors, card styles, and text colors based on the selected mode.
+
+### 4. Client Side Data Handling (`localStorage`)
+* Integrated browser **`localStorage`** to remember the user's preferred theme across sessions.
+* Features a unique visitor counter to track interactions securely on the client side.
+
+### 5. Interactive Contact Form & Form Validation
+* Integrated `novalidate` in HTML combined with custom JavaScript validation and custom Toast notifications.
+* **Floating Toast Notifications:** Delivers animated success (green) and error (red) feedback with auto-fade out after 4 seconds.
 
 ---
-##  Project Directory Structure
+
+## 🛠️ Technologies Used
+* **HTML5:** Semantic layout structuring (`<header class="site-header">`, `<section>`, forms with `novalidate`).
+* **CSS3:** Flexbox, CSS Grid, smooth transitions, and custom dark mode styling overrides.
+* **JavaScript (ES6+):** Asynchronous API requests (`fetch`), DOM manipulation, `localStorage`, real-time search algorithms, and custom toast notifications.
+
+---
+## 📁 Project Directory Structure
 ```text
-assignment-2/
+assignment-3/
 ├── README.md
 ├── index.html
 ├── css/
@@ -57,34 +52,6 @@ assignment-2/
 └── docs/
     ├── ai-usage-report.md
     └── technical-documentation.md
-```
-
-##  How to Run Locally
-
-To run and test this project locally on your machine, follow these detailed steps:
-
-### Prerequisites
-- A modern web browser (Google Chrome, Mozilla Firefox, Safari, or Microsoft Edge).
-- A code editor (such as **Visual Studio Code**, which is recommended).
-
-### Step-by-Step Instructions
-1. **Clone or Download the Repository:**
-   - If using Git, open your terminal and run:
-     ```bash
-     git clone <repository-url>
-     ```
-   - Alternatively, download the project ZIP folder from GitHub and extract it to your preferred directory.
-
-2. **Verify Folder Structure:**
-   - Ensure that all files and folders are correctly placed in the root directory as shown below:
-     ```text
-     assignment-2/
-     ├── index.html
-     ├── css/styles.css
-     ├── js/script.js
-     ├── images/ (containing project assets)
-     └── docs/ (containing documentation reports)
-     ```
 
 3. **Open the Project:**
    - Open **Visual Studio Code**, click on `File > Open Folder`, and select the extracted `assignment-2` folder.

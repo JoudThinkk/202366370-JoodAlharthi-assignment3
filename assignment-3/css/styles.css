@@ -244,25 +244,37 @@ h2 {
     background-color: #216422;
 }
 
-/* Styles when dark mode class is active */
+/* Dark Mode Styles */
 body.dark-mode {
     background-color: #1a1a1a;
     color: #f9f9f9;
 }
 
+body.dark-mode .site-header,
 body.dark-mode .project-card, 
-body.dark-mode .contact-form {
-    background: #6aa36b;
+body.dark-mode .contact-form,
+body.dark-mode .site-footer {
+    background: #242424;
     color: #fff;
 }
 
 body.dark-mode h2, 
-body.dark-mode .form-group label {
+body.dark-mode .form-group label,
+body.dark-mode .project-card h3 {
     color: #ecf0f1;
 }
 
-body.dark-mode .project-card p {
+body.dark-mode .project-card p,
+body.dark-mode .site-footer {
     color: #bdc3c7;
+}
+
+body.dark-mode #project-search,
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #333;
+    color: #fff;
+    border-color: #444;
 }
 
 /*Assisted-by: Gemini*/

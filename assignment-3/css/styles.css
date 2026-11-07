@@ -179,6 +179,22 @@ h2 {
 
 .badge.web { background: #e2f0d9; color: #385723; }
 .badge.network { background: #d9e1f2; color: #1f3864; }
+
+/* API States */
+.loading-state, .error-state {
+    text-align: center;
+    padding: 20px;
+    font-weight: 600;
+    color: #666;
+}
+
+.error-state {
+    color: #e74c3c;
+    background: #fdf3f2;
+    border-radius: 6px;
+    border: 1px solid #f5c6cb;
+}
+
 /* 3. Contact Form Section */
 .contact-form {
     background: #fff;

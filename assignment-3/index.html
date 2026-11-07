@@ -32,26 +32,41 @@
         </div>
     </section>
 
-    <!-- 2. Projects Section (At least 2 projects required) -->
+    <!-- 2. Projects Section (Complex Logic: Filtering & Sorting) -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                
+            <h2>Featured Projects</h2>
+            
+            <!-- Complex Logic Controls: Search & Filter -->
+            <div class="project-controls">
+                <input type="text" id="project-search" placeholder="Search projects..." aria-label="Search projects">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="network">Networking</button>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="projects-container">
                 <!-- Project 1 -->
-                <div class="project-card">
-                    <img src="images/seraj.png" alt="Project 1">
-                    <h3>Seraj Game- SWE206 project</h3>
-                    <p>An interactive experience blending the virtual and real worlds to explore Saudi culture and heritage.</p>
+                <div class="project-card" data-category="web">
+                    <img src="images/seraj.png" alt="Seraj Game project screenshot">
+                    <div class="card-body">
+                        <h3>Seraj Game - SWE206</h3>
+                        <p>An interactive experience blending the virtual and real worlds to explore Saudi culture and heritage.</p>
+                        <span class="badge web">Web Development</span>
+                    </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
-                    <img src="images/NET.jpeg" alt="Project 2">
-                    <h3>NetAssist- ICS343 project</h3>
-                    <p>A web based networking assistant developed as part of the Fundamentals of Computer Networks course.</p>
+                <div class="project-card" data-category="network">
+                    <img src="images/NET.jpeg" alt="NetAssist project screenshot">
+                    <div class="card-body">
+                        <h3>NetAssist - ICS343</h3>
+                        <p>A web based networking assistant developed as part of the Fundamentals of Computer Networks course.</p>
+                        <span class="badge network">Networking</span>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>

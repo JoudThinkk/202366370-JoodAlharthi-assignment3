@@ -25,7 +25,14 @@ themeToggleBtn.addEventListener('click', () => {
         themeToggleBtn.textContent = '🌙 Dark Mode';
     }
 });
-
+    // Visitor Counter State using localStorage
+    let visits = localStorage.getItem('visitorCount') || 1;
+    if (!localStorage.getItem('visited')) {
+        visits++;
+        localStorage.setItem('visitorCount', visits);
+        localStorage.setItem('visited', 'true');
+    }
+    document.getElementById('count').textContent = visits;
 // ==========================================
 // 2. FORM VALIDATION & POPUP TOAST FEEDBACK
 // ==========================================

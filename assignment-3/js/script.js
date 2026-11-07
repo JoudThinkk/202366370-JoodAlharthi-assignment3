@@ -122,26 +122,24 @@ async function fetchGitHubRepos() {
 }
 
 window.addEventListener('DOMContentLoaded', fetchGitHubRepos);
-    // ==========================================
-// 2. FORM VALIDATION & POPUP TOAST FEEDBACK
+   // ==========================================
+// 4. FORM VALIDATION & TOAST FEEDBACK
 // ==========================================
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
-    // Create toast element dynamically and append it to body
     const toast = document.createElement('div');
     toast.id = 'toast-notification';
     document.body.appendChild(toast);
 
     function showToast(message, isError = false) {
         toast.textContent = message;
-        toast.className = ''; // Reset classes
+        toast.className = '';
         if (isError) {
             toast.classList.add('error');
         }
         toast.classList.add('show');
 
-        // Hide toast after 4 seconds
         setTimeout(() => {
             toast.classList.remove('show');
         }, 4000);
@@ -154,7 +152,6 @@ if (contactForm) {
         const emailInput = document.getElementById('email').value.trim();
         const messageInput = document.getElementById('message').value.trim();
 
-        // Validation check
         if (!nameInput || !emailInput || !messageInput) {
             showToast('❌ Please fill in all required fields.', true);
             return;
@@ -165,28 +162,7 @@ if (contactForm) {
             return;
         }
 
-        // Success Toast
         showToast('✅ Success! Thank you for your message, ' + nameInput + '.');
-        
-        // Clear form
         contactForm.reset();
     });
 }
-
-
-// ==========================================
-// 3. ANIMATIONS & TRANSITIONS (Fade-in effect on scroll/load)
-// ==========================================
-window.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    sections.forEach((section, index) => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        
-        setTimeout(() => {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        }, 150 * (index + 1));
-    });
-});

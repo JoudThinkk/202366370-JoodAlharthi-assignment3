@@ -1,0 +1,195 @@
+/* Basic Reset & Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+section {
+    border-bottom: 1px solid #ddd;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+/* 1. About Me Section using Flexbox */
+.about-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Ensures responsiveness on mobile */
+}
+
+.about-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.tagline {
+    font-weight: bold;
+    color: #7AAD7B;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.about-image img {
+    border-radius: 150%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #7AAD7B;
+}
+
+/* 2. Projects Section using CSS Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.project-card h3, .project-card p {
+    padding: 15px;
+}
+
+.project-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* 3. Contact Form Section */
+.contact-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #7AAD7B;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #428943;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #216422;
+}
+
+/* Styles when dark mode class is active */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f9f9f9;
+}
+
+body.dark-mode .project-card, 
+body.dark-mode .contact-form {
+    background: #6aa36b;
+    color: #fff;
+}
+
+body.dark-mode h2, 
+body.dark-mode .form-group label {
+    color: #ecf0f1;
+}
+
+body.dark-mode .project-card p {
+    color: #bdc3c7;
+}
+
+/*Assisted-by: Gemini*/
+
+/* Toast Notification Styles */
+#toast-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: #27ae60;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-weight: 600;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+#toast-notification.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+#toast-notification.error {
+    background-color: #e74c3c;
+}

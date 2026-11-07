@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+ <button id="theme-toggle" style="margin: 20px; padding: 5px 10px; cursor: pointer;">Toggle Dark/Light Mode</button>
+
+    <!-- 1. About Me Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p class="tagline">Jood Alharthi</p>
+                <p class="intro-text">
+                  I am a Computer Science student passionate about computer networks and cybersecurity. 
+                  I enjoy learning through hands on practice, working with others, and taking on new challenges.
+                </p>
+            </div>
+            <div class="about-image">
+                <!-- Profile or placeholder image -->
+                <img src="images/JOOD-3.png" alt="Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Projects Section (At least 2 projects required) -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <img src="images/seraj.png" alt="Project 1">
+                    <h3>Seraj Game- SWE206 project</h3>
+                    <p>An interactive experience blending the virtual and real worlds to explore Saudi culture and heritage.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="images/NET.jpeg" alt="Project 2">
+                    <h3>NetAssist- ICS343 project</h3>
+                    <p>A web based networking assistant developed as part of the Fundamentals of Computer Networks course.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@domain.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

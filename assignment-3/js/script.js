@@ -75,6 +75,53 @@ if (searchInput) {
     searchInput.addEventListener('input', filterAndSearchProjects);
 }
 
+// ==========================================
+// 3. API INTEGRATION (Fetch GitHub Repositories)
+// ==========================================
+async function fetchGitHubRepos() {
+    const loadingEl = document.getElementById('github-loading');
+    const errorEl = document.getElementById('github-error');
+    const containerEl = document.getElementById('github-repos-container');
+
+    try {
+        const response = await fetch('https://api.github.com/users/JoudThink/repos?sort=updated&per_page=4');
+        
+        if (!response.ok) {
+            throw new Error(`GitHub API Error: Status ${response.status}`);
+        }
+
+        const repos = await response.json();
+        loadingEl.style.display = 'none';
+
+        if (repos.length === 0) {
+            containerEl.innerHTML = '<p>No public repositories found.</p>';
+            return;
+        }
+
+        containerEl.innerHTML = '';
+        repos.forEach(repo => {
+            const repoCard = document.createElement('div');
+            repoCard.className = 'project-card';
+            repoCard.innerHTML = `
+                <div class="card-body">
+                    <h3>📂 ${repo.name}</h3>
+                    <p>${repo.description ? repo.description : 'No description provided.'}</p>
+                    <span class="badge web">⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</span>
+                    <br><br>
+                    <a href="${repo.html_url}" target="_blank" style="color: #7AAD7B; font-weight: 600; text-decoration: none;">View on GitHub &rarr;</a>
+                </div>
+            `;
+            containerEl.appendChild(repoCard);
+        });
+
+    } catch (error) {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        errorEl.textContent = `⚠️ Could not load GitHub repositories. Please check your internet connection or try again later. (${error.message})`;
+    }
+}
+
+window.addEventListener('DOMContentLoaded', fetchGitHubRepos);
     // ==========================================
 // 2. FORM VALIDATION & POPUP TOAST FEEDBACK
 // ==========================================

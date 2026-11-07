@@ -29,7 +29,15 @@ h2 {
     color: #2c3e50;
     font-size: 2rem;
 }
-
+/* Header */
+.site-header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 /* 1. About Me Section using Flexbox */
 .about-section .container {
     display: flex;

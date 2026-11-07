@@ -132,7 +132,6 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    margin-top: 20px;
 }
 
 .project-card {
@@ -140,7 +139,7 @@ h2 {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .project-card:hover {
@@ -153,15 +152,33 @@ h2 {
     object-fit: cover;
 }
 
-.project-card h3, .project-card p {
+.card-body {
     padding: 15px;
+}
+
+.project-card h3 {
+    margin-bottom: 8px;
+    color: #2c3e50;
 }
 
 .project-card p {
     color: #666;
     font-size: 0.95rem;
+    margin-bottom: 12px;
 }
 
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    background: #eee;
+    color: #333;
+}
+
+.badge.web { background: #e2f0d9; color: #385723; }
+.badge.network { background: #d9e1f2; color: #1f3864; }
 /* 3. Contact Form Section */
 .contact-form {
     background: #fff;

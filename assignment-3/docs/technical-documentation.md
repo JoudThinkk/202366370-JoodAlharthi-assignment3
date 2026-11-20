@@ -21,7 +21,7 @@ This technical documentation outlines the architecture, advanced technology stac
   - Custom CSS classes and state styling for the Dark/Light Mode theme, Toast notifications, and smooth `opacity` transitions (`transition: background-color 0.3s ease, color 0.3s ease;`)
 
 - **JavaScript (ES6+):** Client-side programming handling:
-  - **Asynchronous API Integration (`fetch` / `async/await`):** Live fetching of public repositories from the GitHub account (`@JoudThink`) with dynamic DOM rendering.
+  - **Asynchronous API Integration (`fetch` / `async/await`):** Live fetching of public repositories from the GitHub account (`@JoudThinkk`) with dynamic DOM rendering.
   - **Robust Error & Loading States:** Handling network latency with loading indicators and catching API failures gracefully with user-friendly error alerts.
   - **Real-time Search & Filtering Logic:** Combined filtering algorithms checking both selected categories and search queries instantly on user input (`'input'` and `'click'` event listeners).
   - Browser **`localStorage`** API for persistent theme preference storage and unique visitor counting.
@@ -42,7 +42,48 @@ assignment-3/
 ├── images/                     # Media directory for profile and project images
 │   ├── JOOD-3.png
 │   ├── NET.jpeg
-│   └── seraj.png                 
+│   └── seraj.jpg                 
 └── docs/
     ├── ai-usage-report.md      # Detailed documentation of AI collaboration (Gemini)
     └── technical-documentation.md # System architecture and implementation details for Assignment 3
+
+## 4. Feature Data Flow
+
+### Theme and Visitor State
+- Theme preference is read from `localStorage.theme` when the page loads.
+- Clicking the theme button toggles `dark-mode` and saves `dark` or `light`.
+- The visitor count is stored under `visitorCount`; the page updates the footer value from the browser state.
+
+### Project Filtering
+- The active category button and search text are combined for each project card.
+- A card remains visible only when its category and title or description match the current query.
+- Filter buttons update the active state before applying the combined condition.
+
+### GitHub API
+- `fetchGitHubRepos()` requests the four recently updated public repositories for `@JoudThinkk`.
+- HTTP errors and network failures are caught and shown in the API error state.
+- Successful results are inserted into the repository grid; an empty response shows a no-repositories message.
+
+### Contact Validation
+- Submission is intercepted to prevent an unintended page reload.
+- Required fields are trimmed and checked for empty values.
+- Email input is checked with a basic regular expression.
+- Successful submissions show a green toast and reset the form.
+
+## 5. Responsive and Performance Considerations
+
+- CSS Grid automatically adjusts project columns for available viewport width.
+- Flexbox and wrapped controls keep the header, project controls, and about section usable on smaller screens.
+- Images are sized with fixed card or avatar dimensions and `object-fit` to avoid layout shifts.
+- Unneeded API work is avoided during filtering because the static project cards are filtered in the browser.
+- The GitHub section includes loading and error states so users receive feedback during requests.
+
+## 6. Testing Checklist
+
+- JavaScript syntax: `node --check js/script.js`
+- API: confirm HTTP 200 and repository cards for the configured GitHub account.
+- Theme: toggle in both directions and reload to verify persistence.
+- Filtering: test All, Web Development, and Networking with and without search text.
+- Validation: submit empty, invalid-email, and valid-form values.
+- Responsive layout: inspect desktop and mobile viewport widths.
+- Broken assets: verify every image and stylesheet path returns successfully from a local server.

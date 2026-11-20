@@ -84,7 +84,7 @@ async function fetchGitHubRepos() {
     const containerEl = document.getElementById('github-repos-container');
 
     try {
-        const response = await fetch('https://api.github.com/users/JoudThink/repos?sort=updated&per_page=4');
+        const response = await fetch('https://api.github.com/users/JoudThinkk/repos?sort=updated&per_page=4');
         
         if (!response.ok) {
             throw new Error(`GitHub API Error: Status ${response.status}`);
@@ -157,7 +157,8 @@ if (contactForm) {
             return;
         }
 
-        if (!emailInput.includes('@') || !emailInput.includes('.')) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput)) {
             showToast('❌ Please enter a valid email address.', true);
             return;
         }

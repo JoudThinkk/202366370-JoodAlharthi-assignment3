@@ -52,14 +52,14 @@ assignment-3/
 └── docs/
     ├── ai-usage-report.md
     └── technical-documentation.md
-
+```
 3. **Open the Project:**
    - Open **Visual Studio Code**, click on `File > Open Folder`, and select the extracted `assignment-2` folder.
 
 4. **Launch the Website:**
    - **Method 1 (Quick Open):** Navigate to the project folder, locate the `index.html` file, and double-click it to open it directly in your default web browser.
    - **Method 2 (Recommended - Live Server):** If you are using VS Code, install the **Live Server** extension. Right-click on `index.html` and select **"Open with Live Server"** to view the live webpage with automatic reloading capabilities.
-```
+
 
 ##  AI Usage Summary
 

@@ -8,6 +8,7 @@ This technical documentation outlines the architecture, advanced technology stac
 - **HTML5:** Utilized semantic elements for clean and accessible page structuring, including:
   - `<header class="site-header">` / Navigation structure with sticky positioning and theme toggle control
   - `<section>` (for partitioning major content blocks like About, Projects, and Contact)
+  - `<input id="visitor-name">` and an `aria-live` greeting region for the personalized dynamic greeting
   - `<div class="project-controls">` (housing real-time search inputs and category filter buttons)
   - `<h2>` and `<h3>` (for hierarchical headings)
   - `<p>` (for text descriptions and taglines)
@@ -48,6 +49,11 @@ assignment-3/
     └── technical-documentation.md # System architecture and implementation details for Assignment 3
 
 ## 4. Feature Data Flow
+
+### Personalized Greeting
+- The About section listens for input in the visitor-name field.
+- As the visitor types, the greeting combines their trimmed name with a time-of-day greeting.
+- Clearing the field restores the prompt; `textContent` safely displays the visitor-provided name.
 
 ### Theme and Visitor State
 - Theme preference is read from `localStorage.theme` when the page loads.

@@ -16,15 +16,18 @@ This repository contains the third and advanced iteration of my personal portfol
 * **Event-Driven UI Updates:** Listens to real-time `'input'` events on the search box and `'click'` events on category buttons, updating project cards instantly without page reloads.
 * **Smooth Transitions:** Applied CSS opacity and transform transitions for clean fade-in and fade-out effects during searches.
 
-### 3. Dynamic Content & Theme Switcher
+### 3. Personalized Dynamic Greeting
+* Visitors can enter their name in the About section to see an immediate greeting that also changes based on the time of day.
+
+### 4. Dynamic Content & Theme Switcher
 * Implemented a dynamic **Dark/Light Mode** toggle button with smooth CSS transitions (`transition: background-color 0.3s ease, color 0.3s ease;`).
 * Dynamically updates UI elements, background colors, card styles, and text colors based on the selected mode.
 
-### 4. Client Side Data Handling (`localStorage`)
+### 5. Client Side Data Handling (`localStorage`)
 * Integrated browser **`localStorage`** to remember the user's preferred theme across sessions.
 * Features a unique visitor counter to track interactions securely on the client side.
 
-### 5. Interactive Contact Form & Form Validation
+### 6. Interactive Contact Form & Form Validation
 * Integrated `novalidate` in HTML combined with custom JavaScript validation and custom Toast notifications.
 * **Floating Toast Notifications:** Delivers animated success (green) and error (red) feedback with auto-fade out after 4 seconds.
 

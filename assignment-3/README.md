@@ -8,7 +8,7 @@ This repository contains the third and advanced iteration of my personal portfol
 ## 🚀 Key Features & Technical Implementation
 
 ### 1. GitHub API Integration (`API Integration`)
-* Implemented an asynchronous function (`fetchGitHubRepos`) utilizing JavaScript's `fetch` and `async/await` to query public repositories dynamically from my GitHub account (`@JoudThink`).
+* Implemented an asynchronous function (`fetchGitHubRepos`) utilizing JavaScript's `fetch` and `async/await` to query public repositories dynamically from my GitHub account (`@JoudThinkk`).
 * **Loading & Error States:** Designed resilient client-side architecture featuring a loading indicator during data retrieval and a user-friendly error state (`.error-state`) to handle network failures gracefully according to rubric specifications.
 
 ### 2. Complex Logic & Real-time Filtering (`Complex Logic`)
@@ -36,6 +36,13 @@ This repository contains the third and advanced iteration of my personal portfol
 * **JavaScript (ES6+):** Asynchronous API requests (`fetch`), DOM manipulation, `localStorage`, real-time search algorithms, and custom toast notifications.
 
 ---
+## 📦 Setup Instructions
+1. Install a modern browser and, optionally, Visual Studio Code with the Live Server extension.
+2. Download or clone this repository.
+3. Open the `assignment-3` folder in Visual Studio Code.
+4. Open `index.html` with Live Server or double-click it in a browser.
+5. Keep an internet connection enabled for the live GitHub repository section.
+
 ## 📁 Project Directory Structure
 ```text
 assignment-3/
@@ -48,13 +55,13 @@ assignment-3/
 ├── images/
 │   ├── JOOD-3.png
 │   ├── NET.jpeg
-│   └── seraj.png
+│   └── seraj.jpg
 └── docs/
     ├── ai-usage-report.md
     └── technical-documentation.md
 ```
 3. **Open the Project:**
-   - Open **Visual Studio Code**, click on `File > Open Folder`, and select the extracted `assignment-2` folder.
+   - Open **Visual Studio Code**, click on `File > Open Folder`, and select the extracted `assignment-3` folder.
 
 4. **Launch the Website:**
    - **Method 1 (Quick Open):** Navigate to the project folder, locate the `index.html` file, and double-click it to open it directly in your default web browser.
@@ -63,7 +70,7 @@ assignment-3/
 
 ##  AI Usage Summary
 
-During the development of **Assignment 2**, Artificial Intelligence tools which was Gemini utilized responsibly and transparently as a collaborative assistant to enhance the learning and development process. 
+During the development of **Assignment 3**, Google Gemini was utilized responsibly and transparently as a collaborative assistant to enhance the learning and development process.
 
 ### How AI Was Utilized:
 1. **Brainstorming & Logic Design:** 

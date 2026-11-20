@@ -35,7 +35,26 @@ themeToggleBtn.addEventListener('click', () => {
     document.getElementById('count').textContent = visits;
 
 // ==========================================
-// 2. COMPLEX LOGIC: PROJECT FILTERING & SEARCH
+// 2. DYNAMIC CONTENT: PERSONALIZED GREETING
+// ==========================================
+const visitorNameInput = document.getElementById('visitor-name');
+const personalGreeting = document.getElementById('personal-greeting');
+
+visitorNameInput.addEventListener('input', () => {
+    const visitorName = visitorNameInput.value.trim();
+
+    if (!visitorName) {
+        personalGreeting.textContent = 'Type your name to see a greeting.';
+        return;
+    }
+
+    const hour = new Date().getHours();
+    const timeGreeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+    personalGreeting.textContent = `${timeGreeting}, ${visitorName}! Welcome to my portfolio.`;
+});
+
+// ==========================================
+// 3. COMPLEX LOGIC: PROJECT FILTERING & SEARCH
 // ==========================================
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.projects-grid .project-card');
@@ -76,7 +95,7 @@ if (searchInput) {
 }
 
 // ==========================================
-// 3. API INTEGRATION (Fetch GitHub Repositories)
+// 4. API INTEGRATION (Fetch GitHub Repositories)
 // ==========================================
 async function fetchGitHubRepos() {
     const loadingEl = document.getElementById('github-loading');
@@ -123,7 +142,7 @@ async function fetchGitHubRepos() {
 
 window.addEventListener('DOMContentLoaded', fetchGitHubRepos);
    // ==========================================
-// 4. FORM VALIDATION & TOAST FEEDBACK
+// 5. FORM VALIDATION & TOAST FEEDBACK
 // ==========================================
 const contactForm = document.querySelector('.contact-form');
 

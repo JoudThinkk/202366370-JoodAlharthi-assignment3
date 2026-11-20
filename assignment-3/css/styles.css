@@ -80,6 +80,32 @@ h2 {
     margin-bottom: 15px;
 }
 
+.greeting-widget {
+    margin-top: 20px;
+    max-width: 420px;
+}
+
+.greeting-widget label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+#visitor-name {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#personal-greeting {
+    min-height: 1.6em;
+    margin-top: 10px;
+    color: #428943;
+    font-weight: 600;
+}
+
 .about-image img {
     border-radius: 150%;
     width: 150px;
@@ -270,6 +296,7 @@ body.dark-mode .site-footer {
 }
 
 body.dark-mode #project-search,
+body.dark-mode #visitor-name,
 body.dark-mode .form-group input,
 body.dark-mode .form-group textarea {
     background: #333;
